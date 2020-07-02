@@ -9,10 +9,6 @@ package controller;
 //https://www.geeksforgeeks.org/multithreading-in-java/
 //https://www.geeksforgeeks.org/synchronized-in-java/
 //https://docs.oracle.com/javaee/6/tutorial/doc/gijti.html
-//https://www.javatpoint.com/web-services-tutorial//https://systembash.com/a-simple-java-udp-server-and-udp-client/
-//https://www.geeksforgeeks.org/multithreading-in-java/
-//https://www.geeksforgeeks.org/synchronized-in-java/
-//https://docs.oracle.com/javaee/6/tutorial/doc/gijti.html
 //https://www.javatpoint.com/web-services-tutorial
 
 import java.io.IOException;

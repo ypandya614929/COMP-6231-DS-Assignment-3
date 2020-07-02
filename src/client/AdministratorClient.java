@@ -364,7 +364,7 @@ public class AdministratorClient {
 		}
 		
 		Service service = Service.create(url, name);
-		System.out.println("------------------------------ "+service.toString());
+
 		return service.getPort(DPSSInterface.class);
 		
 	}
