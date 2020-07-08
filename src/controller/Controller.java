@@ -22,6 +22,7 @@ import java.util.logging.Logger;
 import javax.jws.WebService;
 import javax.jws.soap.SOAPBinding;
 
+import constants.Constants;
 import server.Asia;
 import server.NorthAmerica;
 import server.Europe;
@@ -35,7 +36,7 @@ import interfaces.DPSSInterface;
  *
  * @author ypandya
  */
-@WebService(endpointInterface = "interfaces.DPSSInterface")
+@WebService(endpointInterface = Constants.ENDPOINT_INTERFACE)
 @SOAPBinding(style = SOAPBinding.Style.RPC)
 public class Controller implements DPSSInterface {
 
@@ -66,21 +67,21 @@ public class Controller implements DPSSInterface {
 		if (IP.equals("EU")) 
 		{
 			Europe europe = new Europe(this);
-			Runnable eu = () -> {europe.serverConnection(8880);};
+			Runnable eu = () -> {europe.serverConnection(Constants.EU_SERVER_PORT);};
 			Thread t1 = new Thread(eu);
 			t1.start();
 		} 
 		else if (IP.equals("AS")) 
 		{
 			Asia asia = new Asia(this);
-			Runnable as = () -> {asia.serverConnection(8881);};
+			Runnable as = () -> {asia.serverConnection(Constants.AS_SERVER_PORT);};
 			Thread t2 = new Thread(as);
 			t2.start();
 		} 
 		else if (IP.equals("NA")) 
 		{
 			NorthAmerica northamerica = new NorthAmerica(this);
-			Runnable na = () -> {northamerica.serverConnection(8882);};
+			Runnable na = () -> {northamerica.serverConnection(Constants.NA_SERVER_PORT);};
 			Thread t3 = new Thread(na);
 			t3.start();
 		} 

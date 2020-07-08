@@ -12,6 +12,7 @@ import java.net.URL;
 import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 
+import constants.Constants;
 import interfaces.DPSSInterface;
 
 /**
@@ -137,16 +138,16 @@ public class Testing extends Thread{
 	 * @throws MalformedURLException
 	 */
 	public static DPSSInterface createObject(String ip) throws MalformedURLException {
-		QName name = new QName("http://controller/", "ControllerService");
+		QName name = new QName(Constants.CONTROLLER_QNAME_PATH, "ControllerService");
 		
 		if (ip.startsWith("132")){
-			url = new URL("http://localhost:8080/DPSS/NA?wsdl");
+			url = new URL(Constants.NA_WSDL_PATH);
 		} 
 		else if (ip.startsWith("93")){
-			url = new URL("http://localhost:8080/DPSS/EU?wsdl");
+			url = new URL(Constants.EU_WSDL_PATH);
 		} 
 		else if (ip.startsWith("182")){
-			url = new URL("http://localhost:8080/DPSS/AS?wsdl");
+			url = new URL(Constants.AS_WSDL_PATH);
 		}
 		
 		Service service = Service.create(url, name);

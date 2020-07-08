@@ -12,6 +12,7 @@ import java.io.IOException;
 
 import javax.xml.ws.Endpoint;
 
+import constants.Constants;
 import controller.Controller;
 /**
  *
@@ -29,7 +30,7 @@ public class GameServer {
 	 */
 	public static void main(String args[]) {
 		
-		buildLogDirectory("./logs");
+		buildLogDirectory(Constants.LOGS_DIRECTORY);
 		
 		try {
 						
@@ -37,9 +38,9 @@ public class GameServer {
     		Controller northamerica = new Controller("NA");
     		Controller asia = new Controller("AS");
     		
-    		Endpoint europeEndPoint = Endpoint.publish("http://localhost:8080/DPSS/EU", europe);
-    		Endpoint northamericaEndPoint = Endpoint.publish("http://localhost:8080/DPSS/NA", northamerica);
-    		Endpoint asiaEndPoint = Endpoint.publish("http://localhost:8080/DPSS/AS", asia);
+    		Endpoint europeEndPoint = Endpoint.publish(Constants.EU_ENDPOINT_URL, europe);
+    		Endpoint northamericaEndPoint = Endpoint.publish(Constants.NA_ENDPOINT_URL, northamerica);
+    		Endpoint asiaEndPoint = Endpoint.publish(Constants.AS_ENDPOINT_URL, asia);
 
     		System.out.println("Europe service started : " + europeEndPoint.isPublished());
     		System.out.println("North America service started : " + northamericaEndPoint.isPublished());
@@ -67,7 +68,7 @@ public class GameServer {
 		
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader(new FileReader("src/data.txt"));
+			reader = new BufferedReader(new FileReader(Constants.DATA_FILE_PATH));
 			String line = reader.readLine();
 			while (line != null) {
 				String[] listParts = line.split(",");

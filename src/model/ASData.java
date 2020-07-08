@@ -13,6 +13,9 @@ import java.util.Map.Entry;
 import java.util.logging.FileHandler;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
+
+import constants.Constants;
+
 import java.util.concurrent.ConcurrentHashMap; 
 
 
@@ -360,13 +363,13 @@ public class ASData {
 	 */
 	public int getServerPort(String ip) {
 		if (ip.startsWith("132")) {
-			return 8882;
+			return Constants.NA_SERVER_PORT;
 		}
 		else if (ip.startsWith("93")) {
-			return 8880;
+			return Constants.EU_SERVER_PORT;
 		}
 		else if (ip.startsWith("182")) {
-			return 8881;
+			return Constants.AS_SERVER_PORT;
 		}
 		return 0;	
 	}
