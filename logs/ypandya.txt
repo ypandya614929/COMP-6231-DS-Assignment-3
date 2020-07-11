@@ -1,0 +1,38 @@
+Jul 11, 2020 6:58:05 PM client.PlayerClient addLog
+INFO: 
+Jul 11, 2020 6:58:05 PM client.PlayerClient createAccount
+INFO: IP : 182.123.123.123, username : ypandya, start createPlayerAccount() operation.
+Jul 11, 2020 6:58:05 PM client.PlayerClient createAccount
+INFO: IP : 182.123.123.123, username : ypandya, Result createPlayerAccount() : Player created successfully
+Jul 11, 2020 6:58:55 PM client.PlayerClient createAccount
+INFO: IP : 182.123.333.444, username : ypandya, start createPlayerAccount() operation.
+Jul 11, 2020 6:58:55 PM client.PlayerClient createAccount
+INFO: IP : 182.123.333.444, username : ypandya, Result createPlayerAccount() : Player already exists
+Jul 11, 2020 6:59:11 PM client.PlayerClient signIn
+INFO: IP : 182.123.123.123, username : ypandya, start playerSignIn() operation.
+Jul 11, 2020 6:59:11 PM client.PlayerClient signIn
+INFO: IP : 182.123.123.123, username : ypandya, Result playerSignIn() : Player sign in successfully
+Jul 11, 2020 6:59:21 PM client.PlayerClient signIn
+INFO: IP : 182.123.123.123, username : ypandya, start playerSignIn() operation.
+Jul 11, 2020 6:59:21 PM client.PlayerClient signIn
+INFO: IP : 182.123.123.123, username : ypandya, Result playerSignIn() : Player already signed in
+Jul 11, 2020 7:00:55 PM client.PlayerClient signOut
+INFO: IP : 182.123.123.123, username : ypandya, start playerSignOut() operation.
+Jul 11, 2020 7:00:55 PM client.PlayerClient signOut
+INFO: IP : 182.123.123.123, username : ypandya, Result playerSignOut() : Player sign out successfully
+Jul 11, 2020 7:01:05 PM client.PlayerClient signOut
+INFO: IP : 182.123.123.123, username : ypandya, start playerSignOut() operation.
+Jul 11, 2020 7:01:05 PM client.PlayerClient signOut
+INFO: IP : 182.123.123.123, username : ypandya, Result playerSignOut() : Player is not signed in
+Jul 11, 2020 7:03:40 PM client.PlayerClient createAccount
+INFO: IP : 182.123.123.123, username : ypandya, start createPlayerAccount() operation.
+Jul 11, 2020 7:03:40 PM client.PlayerClient createAccount
+INFO: IP : 182.123.123.123, username : ypandya, Result createPlayerAccount() : Player created successfully
+Jul 11, 2020 7:04:11 PM client.PlayerClient transferAccount
+INFO: IP : 182.123.123.123, username : ypandya, start transferAccount() operation.
+Jul 11, 2020 7:04:11 PM client.PlayerClient transferAccount
+INFO: IP : 182.123.123.123, username : ypandya, Result transferAccount() : Invalid IP address or Password
+Jul 11, 2020 7:04:46 PM client.PlayerClient transferAccount
+INFO: IP : 182.123.123.123, username : ypandya, start transferAccount() operation.
+Jul 11, 2020 7:04:46 PM client.PlayerClient transferAccount
+INFO: IP : 182.123.123.123, username : ypandya, Result transferAccount() : Player account (ypandya) is transfered from 182.123.123.123 to 93.321.321.321

@@ -3,7 +3,6 @@ package interfaces;
 import java.io.IOException;
 
 import javax.jws.WebService;
-import javax.jws.soap.SOAPBinding;
 import javax.jws.WebMethod;
 
 /**
@@ -11,7 +10,6 @@ import javax.jws.WebMethod;
  *
  */
 @WebService
-@SOAPBinding(style = SOAPBinding.Style.RPC)
 public interface DPSSInterface {
 	
 	/**

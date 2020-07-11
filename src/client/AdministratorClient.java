@@ -17,11 +17,12 @@ import java.util.logging.SimpleFormatter;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
 
-import constants.Constants;
-import interfaces.DPSSInterface;
+import implementationwsdl.ASServerService;
+import implementationwsdl.EUServerService;
+import implementationwsdl.IOException_Exception;
+import implementationwsdl.NAServerService;
+import implementationwsdl.DPSSInterface;
 
 /**
  *
@@ -150,11 +151,12 @@ public class AdministratorClient {
 	 * This method is used to get input to get player status
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void getPlayerStatus() throws IOException, InterruptedException {
+	public static void getPlayerStatus() throws IOException, InterruptedException, IOException_Exception {
 		boolean is_info_collected = false;
 		String username = "";
 		String password = "";
@@ -222,11 +224,12 @@ public class AdministratorClient {
 	 * This method is used to get input to suspend player account
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void suspendAccount() throws IOException, InterruptedException {
+	public static void suspendAccount() throws IOException, InterruptedException, IOException_Exception {
 		boolean is_info_collected = false;
 		String username = "";
 		String password = "";
@@ -351,23 +354,22 @@ public class AdministratorClient {
 	 * @throws NotFound 
 	 */
 	public static DPSSInterface createAdminObject(String ip) throws MalformedURLException {
-		
-		QName name = new QName(Constants.CONTROLLER_QNAME_PATH, "ControllerService");
-		
+				
 		if (ip.startsWith("132")) {
-			url = new URL(Constants.NA_WSDL_PATH);
+			NAServerService service = new NAServerService();
+			return service.getNAServerPort();
 		} 
 		else if (ip.startsWith("93")) {
-			url = new URL(Constants.EU_WSDL_PATH);
+			EUServerService service = new EUServerService();
+			return service.getEUServerPort();
 		} 
 		else if (ip.startsWith("182")) {
-			url = new URL(Constants.AS_WSDL_PATH);
+			ASServerService service = new ASServerService();
+			return service.getASServerPort();
 		}
 		
-		Service service = Service.create(url, name);
-
-		return service.getPort(DPSSInterface.class);
-		
+		return null;
+				
 	}
 }
 	

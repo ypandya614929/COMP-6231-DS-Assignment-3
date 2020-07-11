@@ -6,8 +6,6 @@ package constants;
 public class Constants {
 	
 	public static final String ENDPOINT_INTERFACE = "interfaces.DPSSInterface";
-
-	public static final String CONTROLLER_QNAME_PATH = "http://controller/";
 	
 	public static final String NA_WSDL_PATH = "http://localhost:8080/DPSS/NA?wsdl";
 	

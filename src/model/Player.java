@@ -26,7 +26,7 @@ public class Player {
 	 * @param password
 	 * @param ipAddress
 	 */
-	Player(String firstName, String lastName, String age, String userName, String password, String ipAddress){
+	public Player(String firstName, String lastName, String age, String userName, String password, String ipAddress){
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.age = age;

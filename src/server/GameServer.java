@@ -13,7 +13,6 @@ import java.io.IOException;
 import javax.xml.ws.Endpoint;
 
 import constants.Constants;
-import controller.Controller;
 /**
  *
  * @author ypandya
@@ -34,9 +33,9 @@ public class GameServer {
 		
 		try {
 						
-			Controller europe = new Controller("EU");
-    		Controller northamerica = new Controller("NA");
-    		Controller asia = new Controller("AS");
+			EUServer europe = new EUServer();
+    		ASServer asia = new ASServer();
+    		NAServer northamerica = new NAServer();
     		
     		Endpoint europeEndPoint = Endpoint.publish(Constants.EU_ENDPOINT_URL, europe);
     		Endpoint northamericaEndPoint = Endpoint.publish(Constants.NA_ENDPOINT_URL, northamerica);
@@ -64,7 +63,7 @@ public class GameServer {
 	 * @param northamerica northamerica controller object 
 	 * @param asia asia controller object 
 	 */
-	static void loadData(Controller europe, Controller northamerica, Controller asia) {
+	static void loadData(EUServer europe, NAServer northamerica, ASServer asia) {
 		
 		BufferedReader reader;
 		try {

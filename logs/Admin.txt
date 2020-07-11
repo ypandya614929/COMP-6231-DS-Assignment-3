@@ -1,0 +1,18 @@
+Jul 11, 2020 6:56:35 PM client.AdministratorClient addLog
+INFO: 
+Jul 11, 2020 6:56:35 PM client.AdministratorClient getPlayerStatus
+INFO: IP : 132.111.222.333, username : Admin, start getPlayerStatus() operation.
+Jul 11, 2020 6:56:35 PM client.AdministratorClient getPlayerStatus
+INFO: IP : 132.111.222.333, username : Admin, Result getPlayerStatus() : North American : 0 online , 9 offline. Europe : 0 online , 4 offline. Asian : 0 online , 5 offline.
+Jul 11, 2020 6:59:57 PM client.AdministratorClient getPlayerStatus
+INFO: IP : 182.132.232.111, username : Admin, start getPlayerStatus() operation.
+Jul 11, 2020 6:59:57 PM client.AdministratorClient getPlayerStatus
+INFO: IP : 182.132.232.111, username : Admin, Result getPlayerStatus() : Asian : 1 online , 5 offline. North American : 0 online , 9 offline. Europe : 0 online , 4 offline.
+Jul 11, 2020 7:02:39 PM client.AdministratorClient suspendAccount
+INFO: IP : 182.123.123.123, username : Admin, start suspendAccount() operation.
+Jul 11, 2020 7:02:39 PM client.AdministratorClient suspendAccount
+INFO: IP : 182.123.123.123, username : Admin, Result suspendAccount() : Player account (ypandya) is suspended
+Jul 11, 2020 7:03:12 PM client.AdministratorClient suspendAccount
+INFO: IP : 182.123.123.123, username : Admin, start suspendAccount() operation.
+Jul 11, 2020 7:03:12 PM client.AdministratorClient suspendAccount
+INFO: IP : 182.123.123.123, username : Admin, Result suspendAccount() : Player account (ypandya) doesn't exists

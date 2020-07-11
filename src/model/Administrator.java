@@ -19,7 +19,7 @@ public class Administrator {
 	 * @param password
 	 * @param ipAddress
 	 */
-	Administrator(String username, String password, String ipAddress){
+	public Administrator(String username, String password, String ipAddress){
 		this.userName = username;
 		this.password = password;
 		this.ipAddress = ipAddress;

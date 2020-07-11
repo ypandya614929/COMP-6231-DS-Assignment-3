@@ -17,12 +17,13 @@ import java.util.logging.SimpleFormatter;
 
 import java.net.MalformedURLException;
 import java.net.URL;
-import javax.xml.namespace.QName;
-import javax.xml.ws.Service;
 
-import constants.Constants;
-//import controller.Controller;
-import interfaces.DPSSInterface;
+import implementationwsdl.ASServerService;
+import implementationwsdl.EUServerService;
+import implementationwsdl.IOException_Exception;
+import implementationwsdl.InterruptedException_Exception;
+import implementationwsdl.NAServerService;
+import implementationwsdl.DPSSInterface;
 
 /**
  *
@@ -215,11 +216,12 @@ public class PlayerClient {
 	 * This method is used to get input to create player account
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void createAccount() throws IOException, InterruptedException{
+	public static void createAccount() throws IOException, InterruptedException, IOException_Exception{
 		boolean is_info_collected = false;
 		String firstname = "";
 		String lastname = "";
@@ -329,11 +331,12 @@ public class PlayerClient {
 	 * This method is used to get input to sign in the player
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void signIn() throws IOException, InterruptedException{
+	public static void signIn() throws IOException, InterruptedException, IOException_Exception{
 		boolean is_info_collected = false;
 		String username = "";
 		String password = "";
@@ -401,11 +404,13 @@ public class PlayerClient {
 	 * This method is used to get input to sign out the player
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws InterruptedException_Exception 
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void signOut() throws IOException, InterruptedException{
+	public static void signOut() throws IOException, InterruptedException, IOException_Exception, InterruptedException_Exception{
 		boolean is_info_collected = false;
 		String username = "";
 		String ip = "";
@@ -459,11 +464,13 @@ public class PlayerClient {
 	 * This method is used to get input to transfer player account
 	 * @throws IOException
 	 * @throws InterruptedException
+	 * @throws InterruptedException_Exception 
+	 * @throws IOException_Exception 
 	 * @throws InvalidName 
 	 * @throws CannotProceed 
 	 * @throws NotFound 
 	 */
-	public static void transferAccount() throws IOException, InterruptedException{
+	public static void transferAccount() throws IOException, InterruptedException, IOException_Exception, InterruptedException_Exception{
 		boolean is_info_collected = false;
 		String username = "";
 		String password = "";
@@ -591,20 +598,20 @@ public class PlayerClient {
 	 */
 	public static DPSSInterface createPlayerObject(String ip) throws MalformedURLException {
 		
-		QName name = new QName(Constants.CONTROLLER_QNAME_PATH, "ControllerService");
-		
 		if (ip.startsWith("132")) {
-			url = new URL(Constants.NA_WSDL_PATH);
+			NAServerService service = new NAServerService();
+			return service.getNAServerPort();
 		} 
 		else if (ip.startsWith("93")) {
-			url = new URL(Constants.EU_WSDL_PATH);
+			EUServerService service = new EUServerService();
+			return service.getEUServerPort();
 		} 
 		else if (ip.startsWith("182")) {
-			url = new URL(Constants.AS_WSDL_PATH);
+			ASServerService service = new ASServerService();
+			return service.getASServerPort();
 		}
 		
-		Service service = Service.create(url, name);
-		return service.getPort(DPSSInterface.class);
+		return null;
 	}
 }
 	
