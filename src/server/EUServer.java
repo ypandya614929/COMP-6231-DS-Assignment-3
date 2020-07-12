@@ -93,7 +93,9 @@ public class EUServer implements DPSSInterface {
 		adminserverData = new ConcurrentHashMap<>();
 		playerserverData = new ConcurrentHashMap<>();
 		addLog("logs/EU.txt", "EU");
-		Runnable eu = () -> {serverConnection(Constants.EU_SERVER_PORT);};
+		Runnable eu = () -> {
+			serverConnection(Constants.EU_SERVER_PORT);
+		};
 		Thread t = new Thread(eu);
 		t.start();
 	}

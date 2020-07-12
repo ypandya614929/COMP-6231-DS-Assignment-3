@@ -93,7 +93,9 @@ public class NAServer implements DPSSInterface{
 		adminserverData = new ConcurrentHashMap<>();
 		playerserverData = new ConcurrentHashMap<>();
 		addLog("logs/NA.txt", "NA");
-		Runnable na = () -> {serverConnection(Constants.NA_SERVER_PORT);};
+		Runnable na = () -> {
+			serverConnection(Constants.NA_SERVER_PORT);
+		};
 		Thread t = new Thread(na);
 		t.start();
 	}

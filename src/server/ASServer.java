@@ -93,7 +93,9 @@ public class ASServer implements DPSSInterface {
 		adminserverData = new ConcurrentHashMap<>();
 		playerserverData = new ConcurrentHashMap<>();
 		addLog("logs/AS.txt", "AS");
-		Runnable as = () -> {serverConnection(Constants.AS_SERVER_PORT);};
+		Runnable as = () -> {
+			serverConnection(Constants.AS_SERVER_PORT);
+		};
 		Thread t = new Thread(as);
 		t.start();
 	}
